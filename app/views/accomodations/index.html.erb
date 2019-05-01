@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Accomodations</h1>
+
+<% @accomodations.each do |accomodation| %>
+<div style="padding:10px; margin-bottom:20px; border:1px solid black">
+  <h1><%= accomodation.title %></h1>
+  <em><%= accomodation.city %></em>
+  <p><%= accomodation.body %></p>
+  <%= link_to 'Show', accomodation %>
+  <%= link_to 'Edit', edit_accomodation_path(accomodation) %>
+  <%= link_to 'Destroy', accomodation, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+
+<%= link_to 'New Accomodation', new_accomodation_path %>
